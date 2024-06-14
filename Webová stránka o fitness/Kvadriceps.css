@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=REM&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'REM', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+body {
+    
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    background-image: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0) 71%, rgba(0,0,0,1) 100%), url('imgs/Pozadi_Postava.png');
+    background-size: cover;
+    background-repeat: no-repeat; /* Zabraní opakování obrázku */
+    background-attachment: fixed; /*fixní pozadí */
+    
+
+}
+
+
+header {
+    z-index: 99;
+    position: fixed;
+    background-color: #ffffff25;
+    backdrop-filter: blur(4px);
+    color: #000000;
+    text-align: center;
+    padding: -10px;
+    width:100%;
+}
+
+header nav {
+    width: 100%;
+}
+
+header nav ul {
+    display: flex;
+    
+    justify-content: center; /* Změna zarovnání položek na střed */
+    padding: -10px 0;
+    text-align: center;
+}
+
+header nav ul a {
+    gap: 20px;
+    display: inline-block; /* Změna na inline-block pro možnost nastavení výšky a šířky */
+    padding: 10px 20px; /* Upravení poloměru rohů */
+    border-radius: 5px; /* Zaoblení rohů */
+    transition: transform 0.2s, background-color 0.2s; /* Přidání animace pro pozadí */
+    color: white;
+    font-size: 20px; /* Snížení velikosti písma */
+  
+}
+
+header nav ul a:hover {
+    transform: scale(1.1);
+    background-color: #333; /* Změna barvy pozadí na hover */
+}
+
+header nav ul a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%);
+    transform-origin: center;
+    transition: width 0.2s;
+}
+
+header nav ul a:hover::before {
+    width: 100%;
+}
+
+
+
+
+.main-content {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Změna: Pouze tři sloupce na jednom řádku */
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap; /* Změna: Položky na řádku se zalomí na nový řádek */
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Position relative for absolute positioning */
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+    padding: 0 15px 15px 15px ;
+    outline: none; /* Odstraní outline */
+    background: linear-gradient(45deg, #1a1a1a, rgba(31, 29, 29, 0.7), rgba(58, 54, 54, 0.7)); /* Kombinace lineárního gradientu s průhledností */
+    background-size: 300% 300%;
+    color: #ffffff;
+    border-radius: 15px; /* Změna: Zaoblení okrajů */
+    height: 500px;
+    width: 600px;
+    padding: 10px;
+    height: 500px;
+    width: 600px;
+      
+}
+
+
+
+.column p {
+    margin-bottom: 30px; /* Zmenšení mezery mezi nadpisem a následujícím obsahem */
+    margin: 10px 0;
+   
+    
+}
+
+.column h2 {
+    margin: 35px auto;
+    font-weight: 900;
+    font-size: 26px; /* Snížení velikosti textu na 32px */
+    line-height: 0; /* Zvýšení výšky řádku */
+}
+
+.column:hover {
+    background-color: rgba(26, 24, 24, 0.7);
+    box-shadow: 0 0 20px black;
+    scale: 1.02;
+}
+
+.center-text {
+    text-align: center;
+
+}
+
+.column iframe{
+width:500px;
+
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header nav ul a {
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+
+    .main-content {
+        margin-top: 50px;
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .column {
+        width: 100%;
+        padding: 10px;
+        height: auto;
+    }
+
+    .column h2 {
+        font-size: 18px;
+        margin: 15px 0;
+        line-height: 1.3;
+    }
+
+    .column p {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    .column iframe {
+        width: 100%;
+        height: auto;
+    }
+}
